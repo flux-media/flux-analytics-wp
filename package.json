@@ -1,0 +1,10 @@
+{
+  "name": "flux-analytics-wp",
+  "version": "0.0.1",
+  "description": "A simple meta analytics dashboard.",
+  "author": "Lee Han Kyeol <lee0hankyeol@gmail.com>",
+  "dependencies": {
+    "highcharts": "^4.2.5"
+  },
+  "license": "GPL2"
+}

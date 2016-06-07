@@ -1,0 +1,36 @@
+.flux-analytics .container {
+    width: 850px;
+}
+
+.flux-analytics .summary-wrapper {
+    margin: 0 auto 2em;
+    overflow: hidden;
+}
+
+.flux-analytics .summary {
+    float: left;
+    width: 120px;
+    text-align: center;
+    margin: 0 1em 0 0;
+    border: 1px solid gray;
+}
+
+.flux-analytics .summary .summary-header {
+    font-size: 1.3em;
+    padding: 0.5em;
+    background-color: cornflowerblue;
+}
+
+.flux-analytics .summary .summary-content {
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+.flux-analytics .pie-chart {
+    width: 400px;
+    float: left;
+}
+
+.flux-analytics hr.separation {
+    clear: both;
+}
