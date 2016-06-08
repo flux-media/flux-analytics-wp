@@ -82,9 +82,23 @@ class FluxAnalytics
         $now = new DateTime('now', new DateTimeZone('Asia/Seoul'));
         if ($action != 'analyze'):
 
+            global $wpdb;
+            $search = $_GET['search'];
+            if (strlen($search) <= 0) {
+                $search = null;
+            }
             ?>
             <div class="wrap">
                 <h1>발행된 포스트 목록(당일 발행 제외)</h1>
+                <div class="flux-analytics-search">
+                    <form>
+                        <label for="search-term">검색어(제목)</label>
+                        <input type="text" id="search-term" name="search"
+                               value="<?php if ($search): echo $search; endif; ?>"/>
+                        <input type="hidden" name="page" value="<?php echo $this->PAGE_SLUG; ?>"/>
+                        <button type="submit">검색</button>
+                    </form>
+                </div>
                 <ul>
                     <?php
 
@@ -97,7 +111,12 @@ class FluxAnalytics
                             'before' => $now->format('Y-m-d')
                         )
                     );
+                    if ($search) {
+                        $args['s'] = $search;
+                    }
+
                     $query = new WP_Query($args);
+
                     if ($query->have_posts()) :
                         while ($query->have_posts()) : $query->the_post();
                             ?>
